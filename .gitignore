@@ -1,0 +1,21 @@
+# Build output
+output/
+*.qcow2
+*.img
+*.iso
+flags*.txt
+configuration*.json
+install_script*.sh
+
+# Models and caches
+*.gguf
+models/
+.venv/
+__pycache__/
+
+
+# Local secrets and editor files
+.env
+*.key
+.vscode/
+.idea/
