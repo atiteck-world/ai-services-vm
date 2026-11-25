@@ -7,12 +7,20 @@ flags*.txt
 configuration*.json
 install_script*.sh
 
+# An Exception: the sample configuration uses the public test key (64 zeros), its flags are not secret
+!catalog/examples/**
+
 # Models and caches
 *.gguf
 models/
 .venv/
 __pycache__/
+*.pyc
 
+# Packer
+packer_cache/
+.packer.d/
+crash.log
 
 # Local secrets and editor files
 .env
