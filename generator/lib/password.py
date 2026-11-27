@@ -3,7 +3,13 @@ from configuration import Configuration
 import random
 import string
 
-def insecure_password(password_list="/tmp/500-worst-passwords.txt"):
+# Directory where the password lists are stored
+LIST_OF_PASSWORDS = "/tmp"
+
+def insecure_password(password_list=None):
+    if password_list is None:
+        password_list = f"{LIST_OF_PASSWORDS}/500-worst-passwords.txt"
+
     with open(password_list) as passwords:
         # Get number of lines
         nr = 0
@@ -29,11 +35,11 @@ def secure_password():
 
 def joker(conf) -> Configuration:
     # Set username and password
-    credentials = insecure_password(password_list="/tmp/ssh-betterdefaultpasslist.txt")
+    credentials = insecure_password(password_list=f"{LIST_OF_PASSWORDS}/ssh-betterdefaultpasslist.txt")
 
     # Username should not be {root, vagrant}
     while credentials.startswith("root") or credentials.startswith("vagrant"):
-        credentials = insecure_password(password_list="/tmp/ssh-betterdefaultpasslist.txt")
+        credentials = insecure_password(password_list=f"{LIST_OF_PASSWORDS}/ssh-betterdefaultpasslist.txt")
 
     credentials = credentials.split(":")
     username = credentials[0]

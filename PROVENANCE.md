@@ -23,3 +23,5 @@ Files copied from the SUASecLab VM repository (virtual-machines). Files changed 
 
 | File | Date | Change | Reason |
 |---|---|---|---|
+| generator/lib/configuration.py | 2026-11-27 | `write_configuration()` takes an `output_dir` parameter (default `/tmp`) | This generate configurations outside the VM (batch generation for RQ2) |
+| generator/lib/password.py | 2026-11-27 | Variable `LIST_OF_PASSWORDS` (default `/tmp`) replaces the hard-coded password list paths | Same as above |
