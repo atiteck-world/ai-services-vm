@@ -1,6 +1,8 @@
 # Provenance of copied files
 
-Files copied from the SUASecLab VM repository (virtual-machines). Files changed after copying are listed under "Modifications".
+Files copied from the SUASecLab VM repository (virtual-machines), licensed under GPLv3, on 2026.11.25. This project
+keeps the GPLv3 licence (see LICENSE). The SHA-256 checksums identify the exact copied version of each file.
+Files changed after copying are listed under "Modifications".
 
 | File in this project | Source in virtual-machines | SHA-256 |
 |---|---|---|
