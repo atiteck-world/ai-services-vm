@@ -1,0 +1,22 @@
+{
+    "description": "A JSON file containing container images and models baked into the base image.",
+    "images": {
+        "ollama": {
+            "repository": "ollama/ollama",
+            "vulnerable": "0.1.33",
+            "patched": "0.17.1"
+        },
+        "open_webui": {
+            "repository": "ghcr.io/oobabooga/open-webui",
+            "vulnerable": "v0.6.34",
+            "patched": "v0.6.41"
+        },
+        "qdrant": {
+            "repository": "qdrant/qdrant",
+            "vulnerable": null,
+            "patched": "v1.15.0"
+        }
+    },
+    "chat_model": "tinyllama",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+}

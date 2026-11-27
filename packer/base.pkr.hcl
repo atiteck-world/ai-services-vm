@@ -81,6 +81,19 @@ build {
     ]
   }
 
+  # Image list for base-images.sh
+  provisioner "file" {
+    source      = "${path.root}/images.json"
+    destination = "/tmp/images.json"
+  }
+
+  # container images, pinned by id.
+  provisioner "shell" {
+    execute_command = "echo '${var.ssh_password}' | sudo -S env {{ .Vars }} {{ .Path }}"
+    script          = "${path.root}/../scripts/platform/base-images.sh"
+    timeout         = "4h"
+  }
+
   # Build record
   provisioner "shell" {
     execute_command = "echo '${var.ssh_password}' | sudo -S env {{ .Vars }} {{ .Path }}"
