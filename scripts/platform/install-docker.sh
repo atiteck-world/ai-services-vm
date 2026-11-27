@@ -1,3 +1,4 @@
+#!/bin/bash
 # This script installs Docker CE from the official Docker repository on the AI Services base build VM. 
 # It is intended to be run inside the VM and will not work outside of it.
 # (https://docs.docker.com/engine/install/debian/)
