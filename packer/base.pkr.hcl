@@ -80,4 +80,17 @@ build {
       "${path.root}/../scripts/platform/base-environment.sh"
     ]
   }
+
+  # Build record
+  provisioner "shell" {
+    execute_command = "echo '${var.ssh_password}' | sudo -S env {{ .Vars }} {{ .Path }}"
+    script          = "${path.root}/../scripts/platform/base-record.sh"
+  }
+
+  # copy the build record to the host
+  provisioner "file" {
+    source      = "/opt/ai-services/base-manifest.json"
+    destination = "${path.root}/../output/base/"
+    direction   = "download"
+  }
 }
