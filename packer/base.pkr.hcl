@@ -94,6 +94,13 @@ build {
     timeout         = "4h"
   }
 
+  # Models: TinyLlama for Ollama, the embedding model for Open WebUI
+  provisioner "shell" {
+    execute_command = "echo '${var.ssh_password}' | sudo -S env {{ .Vars }} {{ .Path }}"
+    script          = "${path.root}/../scripts/platform/base-models.sh"
+    timeout         = "4h"
+  }
+
   # Build record
   provisioner "shell" {
     execute_command = "echo '${var.ssh_password}' | sudo -S env {{ .Vars }} {{ .Path }}"
